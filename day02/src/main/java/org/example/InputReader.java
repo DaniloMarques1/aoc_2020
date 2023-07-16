@@ -35,12 +35,12 @@ public class InputReader {
         line = line.replace("-", " ");
         line = line.replace(":", "");
         String[] parsed = line.split(" ");
-        int min = Integer.parseInt(parsed[0]);
-        int max = Integer.parseInt(parsed[1]);
+        int firstPosition = Integer.parseInt(parsed[0]);
+        int secondPosition = Integer.parseInt(parsed[1]);
         String c = parsed[2];
         String password = parsed[3];
 
-        return new PasswordInput(min, max, c, password);
+        return new PasswordInput(firstPosition, secondPosition, c, password);
     }
 
 }

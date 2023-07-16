@@ -8,8 +8,8 @@ public class PasswordValidation {
     }
 
     public boolean validate() {
-        int firstPosition = this.passwordInput.getMin() - 1;
-        int secondPosition = this.passwordInput.getMax() - 1;
+        int firstPosition = this.passwordInput.getFirstPosition() - 1;
+        int secondPosition = this.passwordInput.getSecondPosition() - 1;
         char firstChar = this.passwordInput.getPassword().charAt(firstPosition);
         char secondChar = this.passwordInput.getPassword().charAt(secondPosition);
         char charToCompare = this.passwordInput.getC().charAt(0);
