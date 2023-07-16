@@ -8,16 +8,16 @@ public class PasswordValidation {
     }
 
     public boolean validate() {
-        int count = this.count(this.passwordInput.getPassword(), this.passwordInput.getC().charAt(0));
-        return count >= this.passwordInput.getMin() && count <= this.passwordInput.getMax();
-    }
+        int firstPosition = this.passwordInput.getMin() - 1;
+        int secondPosition = this.passwordInput.getMax() - 1;
+        char firstChar = this.passwordInput.getPassword().charAt(firstPosition);
+        char secondChar = this.passwordInput.getPassword().charAt(secondPosition);
+        char charToCompare = this.passwordInput.getC().charAt(0);
 
-    private int count(String str, char c) {
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == c) count++;
+        if (firstChar == charToCompare) {
+            return secondChar != charToCompare;
         }
 
-        return count;
+        return secondChar == charToCompare;
     }
 }
